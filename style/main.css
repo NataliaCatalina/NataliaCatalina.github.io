@@ -74,8 +74,14 @@ li a {
 **************/
 #blog {
     background-color: #474e5d;
-    /* background-color: #F5F0ED; */
+    /* background-color: #222222; */
 }
+
+.sprint-post{
+    margin-top: 30px;
+    /* border: 1px solid green; */
+}
+
 
 
 /* The actual timeline (the vertical ruler) */
@@ -176,10 +182,15 @@ li a {
 /**************
 * Sprint-blog *
 **************/
+a {
+    text-decoration: none;
+     color: black;
+}
+
 .sprint-blog {
     background-color: #F4F4F4;
     width: 100%;
-    height: 1160px;
+    height: auto;
     border: 1px solid #F4F4F4;
 }
 
@@ -198,8 +209,8 @@ li a {
     padding: 8%;
 }
 .title-blog {
-    padding-bottom: 3%;
     font-weight: bold;
+    text-decoration: underline;
 }
 
 p{
@@ -208,6 +219,10 @@ p{
 
 .sprint2-image{
   margin: 5%;
+}
+
+.question-blog {
+    padding: 2% 0;
 }
 
 
