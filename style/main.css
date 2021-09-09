@@ -4,8 +4,282 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: Helvetica, sans-serif;
+}
+
+/**************
+*      Nav    *
+**************/
+
 nav {
-    border: 1px solid red;
+    width: 100%;
+    height: 80px;
+    /* position: fixed; */
+}
+
+ul {
+    /* position: fixed; */
+    list-style-type: none;
+    margin: 0;
+    padding: 20px;
+    overflow: hidden;
+    background-color: #F5F0ED;
+}
+
+li {
+    float: right;
+    padding: 5px;
+}
+
+#logo {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* li a:hover:not(.active) {
+    background-color: #111;
+  } */
+
+/**************
+*    About    *
+**************/
+
+.intro-screenshot {
+    width: 100%;
+
+}
+
+#about {
+    /* position: relative; */
+    /* top: 80px; */
+}
+.about-text {
+    position: absolute;
+    width: 40%;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/**************
+*    Blog    *
+**************/
+#blog {
+    background-color: #474e5d;
+    /* background-color: #F5F0ED; */
 }
 
 
+/* The actual timeline (the vertical ruler) */
+.timeline {
+    padding-top: 50px;
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid #F5F0ED;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+    left: 0;
+}
+
+/* Place the container to the right */
+.right {
+    left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+    left: -16px;
+}
+
+/* The actual content */
+.content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+}
+
+
+/**************
+* Sprint-blog *
+**************/
+.sprint-blog {
+    background-color: #F4F4F4;
+    width: 100%;
+    height: 1160px;
+    border: 1px solid #F4F4F4;
+}
+
+.spring-container {
+    width: 60%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    border-radius: 5px;
+    background-color: white;
+    border: 1px solid grey;
+}
+.text-blog{
+
+    padding: 8%;
+}
+.title-blog {
+    padding-bottom: 3%;
+    font-weight: bold;
+}
+
+p{
+    padding-top: 2%;
+}
+
+.sprint2-image{
+  margin: 5%;
+}
+
+
+/**************
+*    tablet   *
+**************/
+@media screen and (min-width: 601px) and (max-width: 799px) {
+
+    .intro-screenshot {
+        display: none;
+    }
+    .intro-screenshot2 {
+        width: 100%;
+        height: auto;
+    }
+
+    .about-text {
+        width: 50%;
+        height: 30%;
+        top: 30%;
+        text-align: center;
+        border: 1px solid yellow;
+        
+    }
+
+
+}
+
+/**************
+*    Mobile   *
+**************/
+@media screen and (max-width:600px) {
+    .intro-screenshot {
+        display: none;
+    }
+
+    .about-text {
+        width: 50%;
+        border: 1px solid yellow;
+        top: 30%;
+        text-align: center;
+    }
+
+    /* Place the timelime to the left */
+    .timeline::after {
+        left: 31px;
+    }
+
+    /* Full-width containers */
+    .container {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    /* Make sure that all arrows are pointing leftwards */
+    .container::before {
+        left: 60px;
+        border: medium solid white;
+        border-width: 10px 10px 10px 0;
+        border-color: transparent white transparent transparent;
+    }
+
+    /* Make sure all circles are at the same spot */
+    .left::after,
+    .right::after {
+        left: 15px;
+    }
+
+    /* Make all right containers behave like the left ones */
+    .right {
+        left: 0%;
+    }
+
+}
