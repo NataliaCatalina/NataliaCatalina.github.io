@@ -207,8 +207,10 @@ p {
     padding-top: 2%;
 }
 
-.sprint2-image {
+.sprint-image {
     margin: 5%;
+    width: 100%;
+    height: auto;
 }
 
 .question-blog {
