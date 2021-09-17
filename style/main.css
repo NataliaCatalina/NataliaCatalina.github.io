@@ -42,11 +42,11 @@ li a {
     text-decoration: none;
 }
 
-li a:hover:not(.active) {
+/* li a:hover:not(.active) {
     background-color: white;
     height: 80px;
     border-radius: 5px;
-  }
+  } */
 
 /**************
 *    About    *
